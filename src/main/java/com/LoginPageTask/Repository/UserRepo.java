@@ -1,5 +1,11 @@
 package com.LoginPageTask.Repository;
 
-public interface UserRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+import com.LoginPageTask.Entity.User;
+
+@Repository
+public interface UserRepo extends JpaRepository<User,Integer> {
+	User findByEmailId(String mailId);
 }
